@@ -13,16 +13,14 @@ let tileOptions2 = tileOptions1.slice();
 let clickCounter = 0;
 let matchCounter = 0;
 
-
 let finalTileOptions = tileOptions1.concat(tileOptions2).sort();
 console.log(finalTileOptions);
 
-//Randomize and remove items from the array
-//Storing the length of the initial array before I remove items. Storing it for the loop value.
-//Looping through the array
-//Finding a random index number based on length of the array.
-//Appending new div into the box div. Displays the random item generated.
-//Splicing one item from the array, that is at the random index position. 
+let animalFacts = {
+  giraffe: 'Giraffes have long necks',
+  whale: 'Whales are hugeeee',
+};
+
 const randomizeTiles = () => {
   const initialArrayLength = finalTileOptions.length;
   for (let i = 1; i <= initialArrayLength; i++) {
@@ -34,11 +32,11 @@ const randomizeTiles = () => {
 
 checkForMatch = () => {
   if ($('.box.active1').html() === $('.box.active2').html()) {
-    $('.fact').html('<div>ANIMAL FACT NOW</div>');
+    $('.fact').html(`<div>${animalFacts[$('.active1').html()]}</div>`);
     $('.box.active1').addClass('hide');
     $('.box.active2').addClass('hide');
     clickCounter = 0;
-    matchCounter = matchCounter + 1;
+    matchCounter = matchCounter + 1;  
     checkMatchCounter();
   } else {
     alert('no match');
@@ -54,20 +52,15 @@ checkMatchCounter = () => {
   };
 };
 
-//Check if Tiles Match after tiles are generated and user selects two tiles. 
-
 $('#play-button').click(function () {
   randomizeTiles();
 });
 
 $('.box').click(function () {
-
   clickCounter = clickCounter + 1;
   console.log(clickCounter);
   $(this).addClass('active' + clickCounter);
-
   if (clickCounter === 2) {
     checkForMatch();
   }
-
 });
