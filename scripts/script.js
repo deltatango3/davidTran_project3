@@ -21,8 +21,9 @@ let animalImages = {
 };
 
 let animalFacts = {
-  giraffe: 'Giraffes have long necks',
-  whale: 'Whales are hugeeee',
+  giraffe: ['Giraffes have long necks', 'giraffes are very tall'],
+  whale: ['Whales are hugeeee', 'Blue whales are cool'],
+  // capuchinMonkey: 'Capuchin monkeys pee on their hands to wash their feet.' 
 };
 
 const randomizeTiles = () => {
@@ -36,7 +37,7 @@ const randomizeTiles = () => {
 
 checkForMatch = () => {
   if ($('.active1 > img').attr('class') === $('.active2 > img').attr('class')) {
-    $('.fact').html(`<div>${animalFacts[$('.active1 > img').attr('class')]}</div>`);
+    $('.fact').html(`<div>${animalFacts[$('.active1 > img').attr('class')][Math.floor(Math.random() * animalFacts[$('.active1 > img').attr('class')].length)]}</div>`);
     $('.box.active1').addClass('hide');
     $('.box.active2').addClass('hide');
     $('.box').removeClass('active1');
