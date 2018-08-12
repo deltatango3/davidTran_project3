@@ -8,13 +8,17 @@
 
 //Duplicate the array.
 
-let tileOptions1 = ['giraffe', 'whale'];
-let tileOptions2 = tileOptions1.slice();
 let clickCounter = 0;
 let matchCounter = 0;
-
-let finalTileOptions = tileOptions1.concat(tileOptions2).sort();
+const tileOptions1 = ['giraffe', 'whale'];
+let tileOptions2 = tileOptions1.slice();
+const finalTileOptions = tileOptions1.concat(tileOptions2).sort();
 console.log(finalTileOptions);
+
+let animalImages = {
+  giraffe: 'https://images-na.ssl-images-amazon.com/images/I/41eVPa0N7ZL.jpg',
+  whale: 'https://c402277.ssl.cf1.rackcdn.com/photos/11558/images/hero_full/shutterstock_112249448.jpg?1462221839',
+};
 
 let animalFacts = {
   giraffe: 'Giraffes have long necks',
@@ -25,29 +29,31 @@ const randomizeTiles = () => {
   const initialArrayLength = finalTileOptions.length;
   for (let i = 1; i <= initialArrayLength; i++) {
     randomIndex = Math.floor(Math.random() * finalTileOptions.length);
-    $('.box' + i).append(`${finalTileOptions[randomIndex]}`);
+    $('.box' + i).append(`<img class="${finalTileOptions[randomIndex]}" src="${animalImages[finalTileOptions[randomIndex]]}">`);
     finalTileOptions.splice(randomIndex, 1);
   };
 };
 
 checkForMatch = () => {
-  if ($('.box.active1').html() === $('.box.active2').html()) {
-    $('.fact').html(`<div>${animalFacts[$('.active1').html()]}</div>`);
+  if ($('.active1 > img').attr('class') === $('.active2 > img').attr('class')) {
+    $('.fact').html(`<div>${animalFacts[$('.active1 > img').attr('class')]}</div>`);
     $('.box.active1').addClass('hide');
     $('.box.active2').addClass('hide');
+    $('.box').removeClass('active1');
+    $('.box').removeClass('active2');
     clickCounter = 0;
     matchCounter = matchCounter + 1;  
     checkMatchCounter();
   } else {
-    alert('no match');
     clickCounter = 0;
+    console.log('no match');
     $('.box').removeClass('active1');
     $('.box').removeClass('active2');
   }
 }
 
 checkMatchCounter = () => {
-  if (matchCounter === 2) {
+  if (matchCounter === tileOptions1.length) {
     $('.wrapper').html('<div>Game Over</div>');
   };
 };
@@ -58,8 +64,7 @@ $('#play-button').click(function () {
 
 $('.box').click(function () {
   clickCounter = clickCounter + 1;
-  console.log(clickCounter);
-  $(this).addClass('active' + clickCounter);
+  $(this).addClass('active' + clickCounter);  
   if (clickCounter === 2) {
     checkForMatch();
   }
