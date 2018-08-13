@@ -10,53 +10,66 @@
 
 let clickCounter = 0;
 let matchCounter = 0;
-const tileOptions1 = ['giraffe', 'whale'];
+const tileOptions1 = ['giraffe', 'blueWhale', 'blueJay', 'crocodile', 'tiger', 'elephant'];
 let tileOptions2 = tileOptions1.slice();
 const finalTileOptions = tileOptions1.concat(tileOptions2).sort();
-console.log(finalTileOptions);
 
-let animalImages = {
-  giraffe: 'https://images-na.ssl-images-amazon.com/images/I/41eVPa0N7ZL.jpg',
-  whale: 'https://c402277.ssl.cf1.rackcdn.com/photos/11558/images/hero_full/shutterstock_112249448.jpg?1462221839',
-};
-
-let animalFacts = {
-  giraffe: ['Giraffes have long necks', 'giraffes are very tall'],
-  whale: ['Whales are hugeeee', 'Blue whales are cool'],
-  // capuchinMonkey: 'Capuchin monkeys pee on their hands to wash their feet.' 
-};
 
 const randomizeTiles = () => {
   const initialArrayLength = finalTileOptions.length;
   for (let i = 1; i <= initialArrayLength; i++) {
     randomIndex = Math.floor(Math.random() * finalTileOptions.length);
-    $('.box' + i).append(`<img class="${finalTileOptions[randomIndex]}" src="${animalImages[finalTileOptions[randomIndex]]}">`);
+    $('.box' + i).append(`<img class="${finalTileOptions[randomIndex]} hide" src="${animalImages[finalTileOptions[randomIndex]]}">`);
     finalTileOptions.splice(randomIndex, 1);
   };
 };
 
-checkForMatch = () => {
-  if ($('.active1 > img').attr('class') === $('.active2 > img').attr('class')) {
-    $('.fact').html(`<div>${animalFacts[$('.active1 > img').attr('class')][Math.floor(Math.random() * animalFacts[$('.active1 > img').attr('class')].length)]}</div>`);
-    $('.box.active1').addClass('hide');
-    $('.box.active2').addClass('hide');
-    $('.box').removeClass('active1');
-    $('.box').removeClass('active2');
+const checkForMatch = () => {
+  if ($('.active1 img').attr('class') === $('.active2 img').attr('class')) {
+    addFacts();
+    hideTiles('.box.active1', '.box.active2');
+    removeActiveClass();
     clickCounter = 0;
     matchCounter = matchCounter + 1;  
     checkMatchCounter();
   } else {
     clickCounter = 0;
-    console.log('no match');
-    $('.box').removeClass('active1');
-    $('.box').removeClass('active2');
+    delayedHideTiles();
+    console.log('first log');
+    removeActiveClass();
+    console.log('Second Log');
   }
-}
+};
 
-checkMatchCounter = () => {
+const checkMatchCounter = () => {
   if (matchCounter === tileOptions1.length) {
     $('.wrapper').html('<div>Game Over</div>');
   };
+};
+
+const addFacts = () => {
+  $('.fact').html(`<div>${animalFacts[$('.active1 img').attr('class')][Math.floor(Math.random() * animalFacts[$('.active1 img').attr('class')].length)]}</div>`);
+};
+
+const hideTiles = (selector1, selector2) => {
+  $(selector1).addClass('hide');
+  $(selector2).addClass('hide');
+};
+
+const delayedHideTiles = function() {
+  console.log('next function');
+
+  $('.box.active1 img').delay(500).queue(function() {
+    $(this).addClass('hide').dequeue();
+  });
+  $('.box.active2 img').delay(500).queue(function() {
+    $(this).addClass('hide').dequeue();
+  });
+};
+
+const removeActiveClass = () => {
+  $('.box').removeClass('active1');
+  $('.box').removeClass('active2');
 };
 
 $('#play-button').click(function () {
@@ -65,7 +78,10 @@ $('#play-button').click(function () {
 
 $('.box').click(function () {
   clickCounter = clickCounter + 1;
-  $(this).addClass('active' + clickCounter);  
+  console.log(clickCounter);
+  $(this).addClass('active' + clickCounter);
+  console.log('active' + clickCounter);
+  $(this).children().removeClass('hide');
   if (clickCounter === 2) {
     checkForMatch();
   }
