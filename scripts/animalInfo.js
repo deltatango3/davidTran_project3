@@ -37,5 +37,24 @@ const animalFacts = {
     `Elephants communicate over long distances using a sub-sonic rumble that can travel over the ground faster than sound through air.`,
     `An Elephant's tusk can weight up to 22 pounds and each one is worth $10,000 - $15,000 on the black market in Asia.`,
     `An elephant trunk weighs about 400 pounds, but they are able to pick up tiny things such as a single grain of rice.`,
+  ],
+  koala: [
+    `Koalas fingerprints are virtually indistinguishable from human ones, so much so that they can be mistaken for one another in criminal investigations.`,
+    `Koalas are not bears: They’re marsupials. Their closest living relative is the wombat.`,
+    `Baby koalas are called joeys. Many other babies that belong to the Marsupial family are also called joeys.`,
+  ],
+  polarBear: [
+    `Polar bears have jet black skin. Their fur is translucent and only appears white because it reflects visible light.`,
+    `Polar bear-grizzly bears exist. They are called 'grolar bears or pizzly bears.`,
+    `Polar bears are the only bear species to be considered marine mammals.`,
+  ],
+  gorilla: [
+    `The word gorilla come from the greek work 'gorillai', which means tribe of hairy women.`,
+    `Gorillas purr.`,
+    `Mike Tyson offered a zoo attendant $10,000 to open the gate and let him fight a gorilla. The zoo attendant did not accept.`,
+  ],
+  manedWolf: [
+    `Maned wolf urine smells like marijuana. Dutch police were called to the zoo to find a pot spoker in the facility. It was a maned wolf marking their territory.`,
+    `Despite its appearance, the maned wolf is neither a wolf or a fox.`,
   ]
 };

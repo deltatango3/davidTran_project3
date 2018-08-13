@@ -10,10 +10,9 @@
 
 let clickCounter = 0;
 let matchCounter = 0;
-const tileOptions1 = ['giraffe', 'blueWhale', 'blueJay', 'crocodile', 'tiger', 'elephant'];
+const tileOptions1 = ['giraffe', 'blueWhale', 'blueJay', 'crocodile', 'tiger', 'elephant', 'koala', 'polarBear', 'gorilla', 'manedWolf'];
 let tileOptions2 = tileOptions1.slice();
 const finalTileOptions = tileOptions1.concat(tileOptions2).sort();
-
 
 const randomizeTiles = () => {
   const initialArrayLength = finalTileOptions.length;
@@ -35,9 +34,7 @@ const checkForMatch = () => {
   } else {
     clickCounter = 0;
     delayedHideTiles();
-    console.log('first log');
     removeActiveClass();
-    console.log('Second Log');
   }
 };
 
@@ -56,9 +53,7 @@ const hideTiles = (selector1, selector2) => {
   $(selector2).addClass('hide');
 };
 
-const delayedHideTiles = function() {
-  console.log('next function');
-
+const delayedHideTiles = () => {
   $('.box.active1 img').delay(500).queue(function() {
     $(this).addClass('hide').dequeue();
   });
