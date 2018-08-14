@@ -4,49 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+  <link rel="stylesheet" href="styles/styles.css">
   <title>Project 3</title>
-
-  <style>
-    img {
-      width: 100%;
-      display: block;
-      height: 100%;
-    }
-    .box {
-      width: 100px;
-      height: 100px;
-      background-color: dodgerblue;
-      border: 1px solid black;
-      margin-right: 20px;
-      float: left;
-    }
-
-    .hide {
-      visibility: hidden;
-    }
-  </style>
 </head>
 <body>
+
+  <header></header>
+
+  <main>
+    <section class="game">
+      <div class="wrapper">
+        <div class="tiles-wrapper">
+          <div class="tile tile1 hide"></div>
+          <div class="tile tile2 hide"></div>
+          <div class="tile tile3 hide"></div>
+          <div class="tile tile4 hide"></div>
+          <div class="tile tile5 hide"></div>
+          <div class="tile tile6 hide"></div>
+          <div class="tile tile7 hide"></div>
+          <div class="tile tile8 hide"></div>
+          <div class="tile tile9 hide"></div>
+          <div class="tile tile10 hide"></div>
+          <div class="tile tile11 hide"></div>
+          <div class="tile tile12 hide"></div>
+          <div class="tile tile13 hide"></div>
+          <div class="tile tile14 hide"></div>
+          <div class="tile tile15 hide"></div>
+          <div class="tile tile16 hide"></div>
+        </div>
+        <div class="button-wrapper">
+          <button id="play-button" class="button">Play</button>
+        </div>
+        <div class="fact-modal">
+          <div class="fact">
+            <p></p>
+            <button id="close-modal" class="close-modal-button">&times;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
   
-  <div class="wrapper">
-    <button id="play-button" class="button">Play</button>
-    <div class="box box1"></div>
-    <div class="box box2"></div>
-    <div class="box box3"></div>
-    <div class="box box4"></div>
-    <div class="box box5"></div>
-    <div class="box box6"></div>
-    <div class="box box7"></div>
-    <div class="box box8"></div>
-    <div class="box box9"></div>
-    <div class="box box10"></div>
-    <div class="box box11"></div>
-    <div class="box box12"></div>
-  </div>
-
-  <div class="fact"></div>
-
+  <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
   <script type="text/javascript" src="scripts/animalInfo.js"></script>
   <script type="text/javascript" src="scripts/script.js"></script>
 

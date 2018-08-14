@@ -1,10 +1,12 @@
 const animalImages = {
-  giraffe: 'https://images-na.ssl-images-amazon.com/images/I/41eVPa0N7ZL.jpg',
-  blueWhale: 'https://c402277.ssl.cf1.rackcdn.com/photos/11558/images/hero_full/shutterstock_112249448.jpg?1462221839',
-  blueJay: 'https://img-aws.ehowcdn.com/877x500p/s3-us-west-1.amazonaws.com/contentlab.studiod/getty/94829a87c3434ee1b0a8ad97dff531f9',
-  crocodile: 'https://images-na.ssl-images-amazon.com/images/I/71TT%2BJApHQL._SX522_.jpg',
-  tiger: 'https://images-na.ssl-images-amazon.com/images/I/71iQpLeln4L._SL1500_.jpg',
-  elephant: 'https://images-na.ssl-images-amazon.com/images/I/71FNiZ2PxaL._SL1500_.jpg',
+  giraffe: 'https://pbs.twimg.com/profile_images/2246834122/image.jpg',
+  blueWhale: 'http://www.fungetaways1.com/Images/mawhalewatch.jpeg',
+  blueJay: 'https://static1.squarespace.com/static/569ec99b841abaccb7c7e74c/56d894c73c44d8fec7d7f017/56d894ce3c44d8fec7d7f048/1529612349740/blue+jay+-+wolf+dsgn+public+domain.jpg?format=500w',
+  crocodile: 'https://images.newrepublic.com/174b5628c41de089916b96a70a953eea7848ed21.jpeg',
+  tiger: 'https://give.bornfree.org.uk/cache/images/19/74/jasper-1168-500.jpg',
+  elephant: 'https://knysnaelephantpark.co.za/wp-content/uploads/2015/02/KEP_WEBSITE_PHOTOS_133096-500x500.jpg',
+  koala: 'https://img.posterlounge.co.uk/images/wbig/poster-koala-umarmt-baum-1691719.jpg',
+  polarBear: 'https://whowhatwhy.com.au/image/cache/catalog/Schleich/Polar%20Bear-500x500.jpg',
 };
 
 const animalFacts = {

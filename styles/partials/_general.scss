@@ -1,0 +1,30 @@
+img {
+  width: 100%;
+  display: block;
+}
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.button {
+  border: none;
+  padding: 3rem 10rem;
+  border-radius: 10px;
+  background-color: #708090;
+  color: #fff;
+}
+
+.close-modal-button {
+  background: none;
+  border: none;
+  font-size: 4rem;
+  color: white;
+  position: absolute;
+  top: -6rem;
+  right: -6rem;
+}
+
+.hide {
+  visibility: hidden;
+}

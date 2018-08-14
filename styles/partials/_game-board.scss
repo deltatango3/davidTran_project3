@@ -1,0 +1,48 @@
+.game {
+  position: relative;
+}
+
+.tiles-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: dodgerblue;
+}
+
+.tile {
+  background-color: dodgerblue;
+  flex: 1 0 22%;
+  border: .5px solid navy;
+}
+
+.button-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// MODAL
+
+.fact-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.fact {
+  background-color: #fefefe;
+  padding: 3rem;
+  position: relative;
+}
