@@ -1,20 +1,41 @@
-.game {
+main {
+  flex: 1 0 50%;
+}
+.game-wrapper {
+  display: flex;
+  height: calc(100vh - 6rem);
+  align-items: center;
+  margin: 3rem;
+}
+.game-board {
   position: relative;
+  & img {
+    background-color: #fff;
+  }
 }
 
 .tiles-wrapper {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
-  max-width: 700px;
   margin: 0 auto;
   background-color: dodgerblue;
+  border-radius: 20px;
 }
 
 .tile {
   background-color: dodgerblue;
   flex: 1 0 22%;
-  border: .5px solid navy;
+  margin: 0 1rem 1rem 0;
+  border-radius: 20px;
+}
+
+.tile:nth-child(4n+4) {
+  margin-right: 0;
+}
+
+.flipper {
+  position: relative;
+  height: 100%;
 }
 
 .button-wrapper {
@@ -45,4 +66,5 @@
   background-color: #fefefe;
   padding: 3rem;
   position: relative;
+  max-width: 80%;
 }

@@ -4,8 +4,16 @@ html {
 body {
   font-size: 1.6rem;
 }
+header {
+  text-align: center;
+}
+h1 {
+  font-family: $heading-font;
+  font-size: 6rem;
+}
 .button {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1.5px;
 }
+

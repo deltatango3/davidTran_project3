@@ -1,0 +1,11 @@
+header {
+  flex: 1 0 50%;
+  margin-bottom: 3rem;
+  & h1 {
+    margin: 0 3rem 3rem;
+  }
+  & .blurb {
+    width: 60%;
+    margin: 0 auto;
+  }
+}

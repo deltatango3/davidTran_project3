@@ -125,6 +125,13 @@ html {
 body {
   font-size: 1.6rem; }
 
+header {
+  text-align: center; }
+
+h1 {
+  font-family: "Fredoka One", cursive;
+  font-size: 6rem; }
+
 .button {
   text-transform: uppercase;
   font-weight: 600;
@@ -158,8 +165,36 @@ img {
 .hide {
   visibility: hidden; }
 
-.game {
+header {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 50%;
+  flex: 1 0 50%;
+  margin-bottom: 3rem; }
+  header h1 {
+    margin: 0 3rem 3rem; }
+  header .blurb {
+    width: 60%;
+    margin: 0 auto; }
+
+main {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 50%;
+  flex: 1 0 50%; }
+
+.game-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100vh - 6rem);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 3rem; }
+
+.game-board {
   position: relative; }
+  .game-board img {
+    background-color: #fff; }
 
 .tiles-wrapper {
   display: -webkit-box;
@@ -167,17 +202,24 @@ img {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  width: 80%;
-  max-width: 700px;
   margin: 0 auto;
-  background-color: dodgerblue; }
+  background-color: dodgerblue;
+  border-radius: 20px; }
 
 .tile {
   background-color: dodgerblue;
   -webkit-box-flex: 1;
   -ms-flex: 1 0 22%;
   flex: 1 0 22%;
-  border: .5px solid navy; }
+  margin: 0 1rem 1rem 0;
+  border-radius: 20px; }
+
+.tile:nth-child(4n+4) {
+  margin-right: 0; }
+
+.flipper {
+  position: relative;
+  height: 100%; }
 
 .button-wrapper {
   position: absolute;
@@ -208,4 +250,5 @@ img {
 .fact {
   background-color: #fefefe;
   padding: 3rem;
-  position: relative; }
+  position: relative;
+  max-width: 80%; }
