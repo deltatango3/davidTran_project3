@@ -27,15 +27,11 @@ main {
   flex: 1 0 22%;
   margin: 0 1rem 1rem 0;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .tile:nth-child(4n+4) {
   margin-right: 0;
-}
-
-.flipper {
-  position: relative;
-  height: 100%;
 }
 
 .button-wrapper {
@@ -43,28 +39,4 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-// MODAL
-
-.fact-modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
-  justify-content: center;
-  align-items: center;
-}
-
-.fact {
-  background-color: #fefefe;
-  padding: 3rem;
-  position: relative;
-  max-width: 80%;
 }
