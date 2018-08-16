@@ -202,11 +202,18 @@ h1 {
   font-family: "Fredoka One", cursive;
   font-size: 6rem;
   letter-spacing: 2px; }
+  @media (max-width: 575px) {
+    h1 {
+      font-size: 3rem; } }
 
 .blurb {
   line-height: 1.6;
   letter-spacing: 0.5px;
-  font-size: 2rem; }
+  font-size: 2rem;
+  font-family: "Open Sans", sans-serif; }
+  @media (max-width: 575px) {
+    .blurb {
+      font-size: 1.8rem; } }
 
 .button {
   text-transform: uppercase;
@@ -219,6 +226,10 @@ body {
 img {
   width: 100%;
   display: block; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
 
 .wrapper {
   max-width: 1200px;
@@ -240,6 +251,10 @@ header {
   -ms-flex: 1 0 50%;
   flex: 1 0 50%;
   margin-bottom: 3rem; }
+  @media (max-width: 799px) {
+    header {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%; } }
   header h1 {
     margin: 0 3rem 3rem; }
   header .blurb {
@@ -247,19 +262,28 @@ header {
     margin: 0 auto; }
 
 main {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 0 50%;
-  flex: 1 0 50%; }
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 600px;
+  min-width: 260px;
+  margin: 0 auto; }
 
 .game-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: calc(100vh - 6rem);
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  height: calc(96vh - 6.3rem);
+  min-height: 600px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   margin: 3rem; }
+  @media (max-width: 575px) {
+    .game-wrapper {
+      margin: 1rem; } }
 
 .game-board {
   position: relative; }
@@ -308,3 +332,11 @@ main {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
+
+footer {
+  background-color: #001011;
+  color: #f7f5f4;
+  padding: .25rem 0; }
+  footer .blurb {
+    font-size: 1rem;
+    padding: 0.5rem; }

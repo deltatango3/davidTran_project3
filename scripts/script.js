@@ -155,7 +155,7 @@ matchGame.resetGame = () => {
     $('.tile').removeClass('hide');
     $('header h1').text(matchGame.ogHeader);
     $('header p').text(matchGame.ogInstructions);
-  })
+  });
 };
 
 matchGame.clickTile = () => {
