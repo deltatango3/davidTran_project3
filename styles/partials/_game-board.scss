@@ -10,7 +10,7 @@ main {
 .game-board {
   position: relative;
   & img {
-    background-color: #fff;
+    background-color: $white;
   }
 }
 
@@ -18,12 +18,12 @@ main {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  background-color: dodgerblue;
+  background-color: $blue;
   border-radius: 20px;
 }
 
 .tile {
-  background-color: dodgerblue;
+  background-color: $blue;;
   flex: 1 0 22%;
   margin: 0 1rem 1rem 0;
   border-radius: 20px;

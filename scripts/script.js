@@ -1,4 +1,6 @@
-const animals = {
+const matchGame = {};
+
+matchGame.animals = {
   giraffe: {
     name: 'Giraffe',
     image: 'assets/giraffe.svg',
@@ -31,7 +33,7 @@ const animals = {
     image: 'assets/tiger.svg',
     facts: [
       `A tiger's stripes are unique each individual, similar to a human fingerprint.`,
-      `Tigers usually live solitary lives. The term for a group of tigers is a "streak"`,
+      `Tigers usually live solitary lives. The term for a group of tigers is a "streak".`,
       `Tigers are completely striped. They even have stripes on their skin.`
     ]
   },
@@ -40,7 +42,7 @@ const animals = {
     image: 'assets/elephant.svg',
     facts: [
       `Elephants communicate over long distances using a sub-sonic rumble that can travel over the ground faster than sound through air.`,
-      `An Elephant's tusk can weight up to 22 pounds and each one is worth $10,000 - $15,000 on the black market in Asia.`,
+      `An Elephant's tusk can weigh up to 22 pounds and each one is worth $10,000 - $15,000 on the black market in Asia.`,
       `An elephant trunk weighs about 400 pounds, but they are able to pick up tiny things such as a single grain of rice.`,
     ]
   },
@@ -73,77 +75,86 @@ const animals = {
   },
 }
 
-let clickCounter = 0;
-let matchCounter = 0;
-const tileOptions1 = ['giraffe', 'blueWhale', 'gorilla', 'crocodile', 'tiger', 'elephant', 'koala', 'polarBear'];
-let tileOptions2 = tileOptions1.slice();
-const finalTileOptions = tileOptions1.concat(tileOptions2).sort();
+matchGame.clickCounter = 0;
+matchGame.matchCounter = 0;
+matchGame.tileOptions1 = ['giraffe', 'blueWhale', 'gorilla', 'crocodile', 'tiger', 'elephant', 'koala', 'polarBear'];
+matchGame.tileOptions2 = matchGame.tileOptions1.slice();
+matchGame.finalTileOptions = matchGame.tileOptions1.concat(matchGame.tileOptions2).sort();
 
-const randomizeTiles = () => {
-  const initialArrayLength = finalTileOptions.length;
+matchGame.randomizeTiles = () => {
+  const initialArrayLength = matchGame.finalTileOptions.length;
   for (let i = 1; i <= initialArrayLength; i++) {
-    randomIndex = Math.floor(Math.random() * finalTileOptions.length);
-    $('.tile' + i).append(`<img class="${finalTileOptions[randomIndex]} hide" src="${animals[finalTileOptions[randomIndex]].image}">`);
-    finalTileOptions.splice(randomIndex, 1);
+    randomIndex = Math.floor(Math.random() * matchGame.finalTileOptions.length);
+    $('.tile' + i).append(`<img data-animal="${matchGame.finalTileOptions[randomIndex]}" class="hide" src="${matchGame.animals[matchGame.finalTileOptions[randomIndex]].image}">`);
+    matchGame.finalTileOptions.splice(randomIndex, 1);
   };
 };
 
-const checkForMatch = () => {
-  if ($('.active1 img').attr('class') === $('.active2 img').attr('class')) {
-    addFacts();
-    addHideClass('.tile.active1', 700);
-    addHideClass('.tile.active2', 700);
-    removeActiveClass();
-    clickCounter = 0;
-    matchCounter = matchCounter + 1;  
-    checkMatchCounter();
+matchGame.checkForMatch = () => {
+  if ($('.active1 img').data('animal') === $('.active2 img').data('animal')) {
+    matchGame.addFacts();
+    matchGame.addHideClass('.tile.active1', 1000);
+    matchGame.addHideClass('.tile.active2', 1000);
+    matchGame.removeActiveClass();
+    matchGame.clickCounter = 0;
+    matchGame.matchCounter = matchGame.matchCounter + 1;  
+    matchGame.checkMatchCounter();
   } else {
-    clickCounter = 0;
-    addHideClass('.tile.active1 img', 500);
-    addHideClass('.tile.active2 img', 500);
-    removeActiveClass();
+    matchGame.clickCounter = 0;
+    matchGame.addHideClass('.tile.active1 img', 500);
+    matchGame.addHideClass('.tile.active2 img', 500);
+    matchGame.removeActiveClass();
   }
 };
 
-const checkMatchCounter = () => {
-  if (matchCounter === tileOptions1.length) {
+matchGame.checkMatchCounter = () => {
+  if (matchGame.matchCounter === matchGame.tileOptions1.length) {
     $('.wrapper').html('<div>Game Over</div>');
   };
 };
 
-const addFacts = () => {
-  $('header h1').text(`The ${animals[$('.active1 img').attr('class')].name}`);
-  $('header .blurb').text(`${animals[$('.active1 img').attr('class')].facts[Math.floor(Math.random() * animals[$('.active1 img').attr('class')].facts.length)]}`);
+matchGame.addFacts = () => {
+  $('header h1').text(`The ${matchGame.animals[$('.active1 img').data('animal')].name}`);
+  $('header .blurb').text(`${matchGame.animals[$('.active1 img').data('animal')].facts[Math.floor(Math.random() * matchGame.animals[$('.active1 img').data('animal')].facts.length)]}`);
 
 };
 
-const addHideClass = (selector, time = '') => {
+matchGame.addHideClass = (selector, time = '') => {
   $(selector).delay(time).queue(function() {
     $(this).addClass('hide').dequeue();
   });
 };
 
-const removeActiveClass = () => {
+matchGame.removeActiveClass = () => {
   $('.tile').removeClass('active1');
   $('.tile').removeClass('active2');
 };
 
-$(function() {
-
-  randomizeTiles();
-
-  $('#play-button').click(function () {
+matchGame.startGame = () => {
+  $('#play-button').on('click', function () {
     $('.tile').removeClass('hide');
     $('.tiles-wrapper').css({'background-color': 'transparent'});
-    addHideClass('.button-wrapper');
+    matchGame.addHideClass('.button-wrapper');
   });
-  
-  $('.tile').click(function () {
-    clickCounter = clickCounter + 1;
-    $(this).addClass('active' + clickCounter);
+};
+
+matchGame.clickTile = () => {
+  $('.tile').on('click', function () {
+    matchGame.clickCounter = matchGame.clickCounter + 1;
+    $(this).addClass('active' + matchGame.clickCounter);
     $(this).children().removeClass('hide');
-    if (clickCounter === 2) {
-      checkForMatch();
+    if (matchGame.clickCounter === 2) {
+      matchGame.checkForMatch();
     }
   });
+};
+
+matchGame.init = () => {
+  matchGame.randomizeTiles();
+  matchGame.startGame();
+  matchGame.clickTile();
+};
+
+$(function() {
+  matchGame.init();
 });

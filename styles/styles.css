@@ -143,6 +143,9 @@ h1 {
   font-weight: 600;
   letter-spacing: 1.5px; }
 
+body {
+  background-color: #f7f5f4; }
+
 img {
   width: 100%;
   display: block; }
@@ -156,17 +159,8 @@ img {
   border: none;
   padding: 3rem 10rem;
   border-radius: 10px;
-  background-color: #708090;
-  color: #fff; }
-
-.close-modal-button {
-  background: none;
-  border: none;
-  font-size: 4rem;
-  color: white;
-  position: absolute;
-  top: -6rem;
-  right: -6rem; }
+  background-color: #001011;
+  color: #f7f5f4; }
 
 .hide {
   visibility: hidden; }
@@ -200,7 +194,7 @@ main {
 .game-board {
   position: relative; }
   .game-board img {
-    background-color: #fff; }
+    background-color: #f7f5f4; }
 
 .tiles-wrapper {
   display: -webkit-box;
@@ -209,11 +203,11 @@ main {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0 auto;
-  background-color: dodgerblue;
+  background-color: #009ffd;
   border-radius: 20px; }
 
 .tile {
-  background-color: dodgerblue;
+  background-color: #009ffd;
   -webkit-box-flex: 1;
   -ms-flex: 1 0 22%;
   flex: 1 0 22%;
