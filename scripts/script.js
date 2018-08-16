@@ -97,7 +97,7 @@ matchGame.checkForMatch = () => {
     matchGame.addHideClass('.tile.active2', 1000);
     matchGame.removeActiveClass();
     matchGame.clickCounter = 0;
-    matchGame.matchCounter = matchGame.matchCounter + 1;  
+    matchGame.matchCounter += 1;  
     matchGame.checkMatchCounter();
   } else {
     matchGame.clickCounter = 0;
@@ -116,7 +116,6 @@ matchGame.checkMatchCounter = () => {
 matchGame.addFacts = () => {
   $('header h1').text(`The ${matchGame.animals[$('.active1 img').data('animal')].name}`);
   $('header .blurb').text(`${matchGame.animals[$('.active1 img').data('animal')].facts[Math.floor(Math.random() * matchGame.animals[$('.active1 img').data('animal')].facts.length)]}`);
-
 };
 
 matchGame.addHideClass = (selector, time = '') => {
@@ -140,7 +139,7 @@ matchGame.startGame = () => {
 
 matchGame.clickTile = () => {
   $('.tile').on('click', function () {
-    matchGame.clickCounter = matchGame.clickCounter + 1;
+    matchGame.clickCounter += 1;
     $(this).addClass('active' + matchGame.clickCounter);
     $(this).children().removeClass('hide');
     if (matchGame.clickCounter === 2) {

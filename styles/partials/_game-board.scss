@@ -34,6 +34,10 @@ main {
   margin-right: 0;
 }
 
+.tile:hover {
+  animation: shake 200ms;
+}
+
 .button-wrapper {
   position: absolute;
   top: 50%;
