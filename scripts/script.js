@@ -60,7 +60,7 @@ matchGame.animals = {
     image: 'assets/polar-bear.svg',
     facts: [
       `Polar bears have jet black skin. Their fur is translucent and only appears white because it reflects visible light.`,
-      `Polar bear-grizzly bears exist. They are called 'grolar bears or pizzly bears.`,
+      `Polar bear-grizzly bears exist. They are called 'grolar bears' or 'pizzly bears.'`,
       `Polar bears are the only bear species to be considered marine mammals.`,
     ]
   },
@@ -79,15 +79,21 @@ matchGame.clickCounter = 0;
 matchGame.matchCounter = 0;
 matchGame.tileOptions1 = ['giraffe', 'blueWhale', 'gorilla', 'crocodile', 'tiger', 'elephant', 'koala', 'polarBear'];
 matchGame.tileOptions2 = matchGame.tileOptions1.slice();
-matchGame.finalTileOptions = matchGame.tileOptions1.concat(matchGame.tileOptions2).sort();
+
+matchGame.ogHeader = `Animal Facts`;
+matchGame.ogInstructions = `Reveal two of the same animals under the tiles and receive an animal fact!`;
 
 matchGame.randomizeTiles = () => {
+
+  matchGame.finalTileOptions = matchGame.tileOptions1.concat(matchGame.tileOptions2).sort();
   const initialArrayLength = matchGame.finalTileOptions.length;
+
   for (let i = 1; i <= initialArrayLength; i++) {
     randomIndex = Math.floor(Math.random() * matchGame.finalTileOptions.length);
     $('.tile' + i).append(`<img data-animal="${matchGame.finalTileOptions[randomIndex]}" class="hide" src="${matchGame.animals[matchGame.finalTileOptions[randomIndex]].image}">`);
     matchGame.finalTileOptions.splice(randomIndex, 1);
   };
+
 };
 
 matchGame.checkForMatch = () => {
@@ -109,7 +115,9 @@ matchGame.checkForMatch = () => {
 
 matchGame.checkMatchCounter = () => {
   if (matchGame.matchCounter === matchGame.tileOptions1.length) {
-    $('.wrapper').html('<div>Game Over</div>');
+    $('.tiles-wrapper').css({'display': 'none'});
+    $('.game-over').css({'display': 'flex'});
+    matchGame.matchCounter = 0;
   };
 };
 
@@ -130,11 +138,24 @@ matchGame.removeActiveClass = () => {
 };
 
 matchGame.startGame = () => {
-  $('#play-button').on('click', function () {
+  $('#play-button').on('click', function() {
     $('.tile').removeClass('hide');
     $('.tiles-wrapper').css({'background-color': 'transparent'});
     matchGame.addHideClass('.button-wrapper');
   });
+};
+
+matchGame.resetGame = () => {
+  $('#reset-button').on('click', function() {
+    $('.game-over').css({'display': 'none'});
+    $('.tiles-wrapper').css({'display': 'flex'});
+    $('.tile img').remove();
+    matchGame.randomizeTiles();
+    matchGame.addHideClass('.tile img');
+    $('.tile').removeClass('hide');
+    $('header h1').text(matchGame.ogHeader);
+    $('header p').text(matchGame.ogInstructions);
+  })
 };
 
 matchGame.clickTile = () => {
@@ -152,6 +173,7 @@ matchGame.init = () => {
   matchGame.randomizeTiles();
   matchGame.startGame();
   matchGame.clickTile();
+  matchGame.resetGame();
 };
 
 $(function() {
