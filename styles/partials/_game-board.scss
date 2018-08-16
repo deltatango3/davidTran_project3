@@ -3,8 +3,8 @@ main {
   max-width: 600px;
   min-width: 260px;
   margin: 0 auto;
-  @media (max-width: $tablet) {
-    // flex-basis: 75%;
+  @media (min-width: $large-desktop) {
+    max-width: 1200px;
   }
 }
 .game-wrapper {
@@ -16,6 +16,8 @@ main {
   margin: 3rem;
   @media (max-width: $mobile) {
     margin: 1rem;
+    align-items: flex-start;
+    height: calc(100vh - 4.75rem);
   }
 }
 .game-board {

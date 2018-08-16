@@ -1,6 +1,9 @@
 html {
   font-size: 62.5%;
-}
+  @media(min-width: $large-desktop) {
+    font-size: 100%;
+  }
+} 
 body {
   font-size: 1.6rem;
 }
@@ -27,6 +30,6 @@ h1 {
 .button {
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: 1.5px;
+  letter-spacing: 3px;
 }
 
