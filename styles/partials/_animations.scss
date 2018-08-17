@@ -33,3 +33,9 @@
     transform: translate(1px, -2px) rotate(-1deg);
   }
 };
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}

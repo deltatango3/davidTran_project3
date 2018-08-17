@@ -189,6 +189,14 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     -webkit-transform: translate(1px, -2px) rotate(-1deg);
     transform: translate(1px, -2px) rotate(-1deg); } }
 
+@-webkit-keyframes shine {
+  to {
+    background-position: 200% center; } }
+
+@keyframes shine {
+  to {
+    background-position: 200% center; } }
+
 html {
   font-size: 62.5%; }
   @media (min-width: 1800px) {
@@ -248,6 +256,22 @@ a {
 
 .hide {
   visibility: hidden; }
+
+.shimmer {
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, #001011), color-stop(40%, #001011), color-stop(60%, #888), to(#222));
+  background: -webkit-linear-gradient(left, #001011 20%, #001011 40%, #888 60%, #222 100%);
+  background: -o-linear-gradient(left, #001011 20%, #001011 40%, #888 60%, #222 100%);
+  background: linear-gradient(to right, #001011 20%, #001011 40%, #888 60%, #222 100%);
+  background-size: 200% auto;
+  -webkit-animation: shine 1500ms linear;
+  animation: shine 1500ms linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
 
 header {
   -webkit-box-flex: 1;

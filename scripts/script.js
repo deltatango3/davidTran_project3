@@ -99,6 +99,7 @@ matchGame.randomizeTiles = () => {
 matchGame.checkForMatch = () => {
   if ($('.active1 img').data('animal') === $('.active2 img').data('animal')) {
     matchGame.addFacts();
+    matchGame.shimmerOnHeading();
     matchGame.addHideClass('.tile.active1', 1000);
     matchGame.addHideClass('.tile.active2', 1000);
     matchGame.removeActiveClass();
@@ -167,6 +168,13 @@ matchGame.clickTile = () => {
       matchGame.checkForMatch();
     }
   });
+};
+
+matchGame.shimmerOnHeading = () => {
+  $('header h1').addClass('shimmer');
+  $('header h1').delay(1000).queue(function() {
+    $(this).removeClass('shimmer').dequeue();
+  })
 };
 
 matchGame.init = () => {

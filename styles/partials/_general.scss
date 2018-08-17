@@ -25,3 +25,15 @@ a{
 .hide {
   visibility: hidden;
 }
+
+.shimmer {
+  background: linear-gradient(to right, $black 20%, $black 40%, #888 60%, #222 100%);
+  background-size: 200% auto;
+  animation: shine 1500ms linear;
+  animation-iteration-count: 1;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
