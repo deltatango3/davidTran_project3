@@ -35,7 +35,7 @@ main {
   border-radius: 20px;
 }
 
-.tile-start-state {
+.tile-disabled {
   z-index: -1;
   opacity: .7;
 }
@@ -69,5 +69,4 @@ main {
   display: none;
   justify-content: center;
   align-items: center;
-
 }

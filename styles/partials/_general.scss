@@ -21,6 +21,11 @@ a{
   background-color: $accent;
   color: $black;
   box-shadow: 5px 5px $black;
+  transition: background-color 300ms ease;
+}
+
+.button:hover {
+  background-color: $accent-hover;
 }
 
 .hide {

@@ -169,7 +169,7 @@ matchGame.resetGame = () => {
 // };
 
 matchGame.enableTiles = () => {
-  $('.tile').removeClass('tile-start-state');
+  $('.tile').removeClass('tile-disabled');
 };
 
 matchGame.clickTile = () => {
