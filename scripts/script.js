@@ -159,13 +159,23 @@ matchGame.resetGame = () => {
   });
 };
 
+// matchGame.hoverTile = () => {
+//   $('.tile').hover(function() {
+//     $(this).addClass('hover');
+//   }, function() {
+//     $(this).removeClass('hover');
+//   })
+// };
+
 matchGame.clickTile = () => {
-  $('.tile').on('click', function () {
-    matchGame.clickCounter += 1;
-    $(this).addClass('active' + matchGame.clickCounter);
-    $(this).children().removeClass('hide');
-    if (matchGame.clickCounter === 2) {
-      matchGame.checkForMatch();
+  $('.tile').on('click', function() {
+    if ($(this).hasClass('active1') !== true || $(this).hassClass('active2') !== true) {
+      matchGame.clickCounter += 1;
+      $(this).addClass('active' + matchGame.clickCounter);
+      $(this).children().removeClass('hide');
+      if (matchGame.clickCounter === 2) {
+        matchGame.checkForMatch();
+      }
     }
   });
 };
@@ -180,6 +190,7 @@ matchGame.shimmerOnHeading = () => {
 matchGame.init = () => {
   matchGame.randomizeTiles();
   matchGame.startGame();
+  // matchGame.hoverTile();
   matchGame.clickTile();
   matchGame.resetGame();
 };

@@ -258,10 +258,10 @@ a {
   visibility: hidden; }
 
 .shimmer {
-  background: -webkit-gradient(linear, left top, right top, color-stop(20%, #001011), color-stop(40%, #001011), color-stop(60%, #888), to(#222));
-  background: -webkit-linear-gradient(left, #001011 20%, #001011 40%, #888 60%, #222 100%);
-  background: -o-linear-gradient(left, #001011 20%, #001011 40%, #888 60%, #222 100%);
-  background: linear-gradient(to right, #001011 20%, #001011 40%, #888 60%, #222 100%);
+  background: -webkit-gradient(linear, right top, left top, color-stop(20%, #001011), color-stop(40%, #001011), color-stop(60%, #888), to(#222));
+  background: -webkit-linear-gradient(right, #001011 20%, #001011 40%, #888 60%, #222 100%);
+  background: -o-linear-gradient(right, #001011 20%, #001011 40%, #888 60%, #222 100%);
+  background: linear-gradient(to left, #001011 20%, #001011 40%, #888 60%, #222 100%);
   background-size: 200% auto;
   -webkit-animation: shine 1500ms linear;
   animation: shine 1500ms linear;
@@ -344,14 +344,18 @@ main {
   flex: 1 0 22%;
   margin: 0 1rem 1rem 0;
   border-radius: 20px;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-transition: opacity 300ms ease;
+  -o-transition: opacity 300ms ease;
+  transition: opacity 300ms ease; }
 
 .tile:nth-child(4n+4) {
   margin-right: 0; }
 
 .tile:hover {
   -webkit-animation: shake 200ms;
-  animation: shake 200ms; }
+  animation: shake 200ms;
+  opacity: 0.7; }
 
 .button-wrapper {
   position: absolute;
