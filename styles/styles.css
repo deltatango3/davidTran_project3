@@ -273,6 +273,9 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
+.zindex {
+  z-index: -1; }
+
 header {
   -webkit-box-flex: 1;
   -ms-flex: 1 0 50%;
@@ -334,7 +337,7 @@ main {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0 auto;
-  background-color: #009ffd;
+  background-color: transparent;
   border-radius: 20px; }
 
 .tile {

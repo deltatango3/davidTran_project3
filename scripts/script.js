@@ -140,8 +140,9 @@ matchGame.removeActiveClass = () => {
 
 matchGame.startGame = () => {
   $('#play-button').on('click', function() {
-    $('.tile').removeClass('hide');
-    $('.tiles-wrapper').css({'background-color': 'transparent'});
+    // $('.tile').removeClass('hide');
+    // $('.tiles-wrapper').css({'background-color': 'transparent'});
+    matchGame.raiseIndex();
     matchGame.addHideClass('.button-wrapper');
   });
 };
@@ -166,6 +167,10 @@ matchGame.resetGame = () => {
 //     $(this).removeClass('hover');
 //   })
 // };
+
+matchGame.raiseIndex = () => {
+  $('.tile').removeClass('zindex');
+};
 
 matchGame.clickTile = () => {
   $('.tile').on('click', function() {
