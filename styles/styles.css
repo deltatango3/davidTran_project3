@@ -251,8 +251,10 @@ a {
   border: none;
   padding: 2rem 6rem;
   border-radius: 10px;
-  background-color: #001011;
-  color: #f7f5f4; }
+  background-color: orangered;
+  color: #001011;
+  -webkit-box-shadow: 5px 5px #001011;
+  box-shadow: 5px 5px #001011; }
 
 .hide {
   visibility: hidden; }
@@ -272,9 +274,6 @@ a {
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
-
-.zindex {
-  z-index: -1; }
 
 header {
   -webkit-box-flex: 1;
@@ -340,6 +339,10 @@ main {
   background-color: transparent;
   border-radius: 20px; }
 
+.tile-start-state {
+  z-index: -1;
+  opacity: .7; }
+
 .tile {
   background-color: #009ffd;
   -webkit-box-flex: 1;
@@ -348,9 +351,9 @@ main {
   margin: 0 1rem 1rem 0;
   border-radius: 20px;
   cursor: pointer;
-  -webkit-transition: opacity 300ms ease;
-  -o-transition: opacity 300ms ease;
-  transition: opacity 300ms ease; }
+  -webkit-transition: opacity 100ms ease;
+  -o-transition: opacity 100ms ease;
+  transition: opacity 100ms ease; }
 
 .tile:nth-child(4n+4) {
   margin-right: 0; }
@@ -358,7 +361,7 @@ main {
 .tile:hover {
   -webkit-animation: shake 200ms;
   animation: shake 200ms;
-  opacity: 0.7; }
+  background-color: rgba(0, 159, 253, 0.7); }
 
 .button-wrapper {
   position: absolute;

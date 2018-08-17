@@ -142,7 +142,7 @@ matchGame.startGame = () => {
   $('#play-button').on('click', function() {
     // $('.tile').removeClass('hide');
     // $('.tiles-wrapper').css({'background-color': 'transparent'});
-    matchGame.raiseIndex();
+    matchGame.enableTiles();
     matchGame.addHideClass('.button-wrapper');
   });
 };
@@ -168,8 +168,8 @@ matchGame.resetGame = () => {
 //   })
 // };
 
-matchGame.raiseIndex = () => {
-  $('.tile').removeClass('zindex');
+matchGame.enableTiles = () => {
+  $('.tile').removeClass('tile-start-state');
 };
 
 matchGame.clickTile = () => {

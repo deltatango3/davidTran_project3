@@ -18,8 +18,9 @@ a{
   border: none;
   padding: 2rem 6rem;
   border-radius: 10px;
-  background-color: $black;
-  color: $white;
+  background-color: $accent;
+  color: $black;
+  box-shadow: 5px 5px $black;
 }
 
 .hide {
@@ -36,8 +37,4 @@ a{
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.zindex {
-  z-index: -1;
 }
