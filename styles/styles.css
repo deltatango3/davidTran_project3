@@ -285,7 +285,15 @@ header {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 50%;
   flex: 0 0 50%;
-  margin-bottom: 3rem; }
+  margin-bottom: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
   @media (max-width: 799px) {
     header {
       -ms-flex-preferred-size: 100%;
@@ -294,18 +302,14 @@ header {
     header {
       margin: 3rem 0 0 0; } }
   header h1 {
-    margin: 0 3rem 3rem; }
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 80%;
+    flex: 0 0 80%;
+    margin: 0; }
   header .blurb {
-    width: 80%;
-    margin: 0 auto; }
-
-main {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
-  max-width: 700px;
-  min-width: 260px;
-  margin: 0 auto; }
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 80%;
+    flex: 0 0 80%; }
 
 .game-wrapper {
   display: -webkit-box;
@@ -313,7 +317,7 @@ main {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  height: calc((100vh - (4vh + 1rem)) - 6rem);
+  height: calc(100vh - (4vh + 1rem) - 6rem);
   min-height: 600px;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -325,10 +329,34 @@ main {
       -webkit-box-align: start;
       -ms-flex-align: start;
       align-items: flex-start;
-      height: calc(100vh - 4.75rem); } }
+      height: calc(96vh - 1rem);
+      margin-bottom: 0; } }
+
+main {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start; }
+  @media (max-width: 799px) {
+    main {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }
 
 .game-board {
-  position: relative; }
+  position: relative;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 90%;
+  flex: 0 0 90%;
+  max-width: 600px;
+  min-width: 260px; }
   .game-board img {
     background-color: #f7f5f4; }
 
@@ -394,6 +422,10 @@ footer {
   -ms-flex-align: center;
   align-items: center;
   padding: .25rem; }
+  @media (max-width: 575px) {
+    footer {
+      height: calc(4vh + 1rem);
+      padding: .5rem .25rem; } }
   footer .blurb {
     font-size: 1rem;
     padding: 0.5rem; }

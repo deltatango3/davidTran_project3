@@ -5,6 +5,10 @@ footer {
   display: flex;
   align-items: center;
   padding: .25rem;
+  @media (max-width: $mobile) {
+    height: calc(4vh + 1rem); 
+    padding: .5rem .25rem
+  }
   & .blurb {
     font-size: 1rem;
     padding: 0.5rem;

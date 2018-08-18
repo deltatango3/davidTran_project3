@@ -140,8 +140,6 @@ matchGame.removeActiveClass = () => {
 
 matchGame.startGame = () => {
   $('#play-button').on('click', function() {
-    // $('.tile').removeClass('hide');
-    // $('.tiles-wrapper').css({'background-color': 'transparent'});
     matchGame.enableTiles();
     matchGame.addHideClass('.button-wrapper');
   });
@@ -159,14 +157,6 @@ matchGame.resetGame = () => {
     $('header p').text(matchGame.ogInstructions);
   });
 };
-
-// matchGame.hoverTile = () => {
-//   $('.tile').hover(function() {
-//     $(this).addClass('hover');
-//   }, function() {
-//     $(this).removeClass('hover');
-//   })
-// };
 
 matchGame.enableTiles = () => {
   $('.tile').removeClass('tile-disabled');
@@ -195,7 +185,6 @@ matchGame.shimmerOnHeading = () => {
 matchGame.init = () => {
   matchGame.randomizeTiles();
   matchGame.startGame();
-  // matchGame.hoverTile();
   matchGame.clickTile();
   matchGame.resetGame();
 };

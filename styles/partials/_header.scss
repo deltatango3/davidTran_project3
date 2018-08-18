@@ -1,6 +1,9 @@
 header {
   flex: 0 0 50%;
   margin-bottom: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   @media (max-width: $tablet) {
     flex-basis: 100%;
   }
@@ -8,10 +11,10 @@ header {
     margin: 3rem 0 0 0;
   }
   & h1 {
-    margin: 0 3rem 3rem;
+    flex: 0 0 80%;
+    margin: 0;
   }
   & .blurb {
-    width: 80%;
-    margin: 0 auto;
+    flex: 0 0 80%;
   }
 }
