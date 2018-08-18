@@ -282,9 +282,9 @@ a {
   -webkit-text-fill-color: transparent; }
 
 header {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 0 50%;
-  flex: 1 0 50%;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
   margin-bottom: 3rem; }
   @media (max-width: 799px) {
     header {
@@ -303,12 +303,9 @@ main {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 50%;
   flex: 0 0 50%;
-  max-width: 600px;
+  max-width: 700px;
   min-width: 260px;
   margin: 0 auto; }
-  @media (min-width: 1800px) {
-    main {
-      max-width: 1200px; } }
 
 .game-wrapper {
   display: -webkit-box;
@@ -316,7 +313,7 @@ main {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  height: calc(96vh - 6.3rem);
+  height: calc((100vh - (4vh + 1rem)) - 6rem);
   min-height: 600px;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -389,7 +386,14 @@ main {
 footer {
   background-color: #001011;
   color: #f7f5f4;
-  padding: .25rem 0; }
+  height: calc(4vh + .5rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: .25rem; }
   footer .blurb {
     font-size: 1rem;
     padding: 0.5rem; }

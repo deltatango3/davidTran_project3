@@ -1,16 +1,13 @@
 main {
   flex: 0 0 50%;
-  max-width: 600px;
+  max-width: 700px;
   min-width: 260px;
   margin: 0 auto;
-  @media (min-width: $large-desktop) {
-    max-width: 1200px;
-  }
 }
 .game-wrapper {
   display: flex;
   flex-wrap: wrap;
-  height: calc(96vh - 6.3rem);
+  height: calc((100vh - (4vh + 1rem)) - 6rem);
   min-height: 600px;
   align-items: center;
   margin: 3rem;
