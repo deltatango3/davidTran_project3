@@ -116,8 +116,8 @@ matchGame.checkForMatch = () => {
 
 matchGame.checkMatchCounter = () => {
   if (matchGame.matchCounter === matchGame.tileOptions1.length) {
-    $('.tiles-wrapper').css({'display': 'none'});
-    $('.game-over').css({'display': 'flex'});
+    $('.tiles-wrapper').addClass('tiles-wrapper-hide');
+    $('.game-over').addClass('game-over-visible');
     matchGame.matchCounter = 0;
   };
 };
@@ -147,8 +147,8 @@ matchGame.startGame = () => {
 
 matchGame.resetGame = () => {
   $('#reset-button').on('click', function() {
-    $('.game-over').css({'display': 'none'});
-    $('.tiles-wrapper').css({'display': 'flex'});
+    $('.game-over').removeClass('game-over-visible');
+    $('.tiles-wrapper').removeClass('tiles-wrapper-hide');
     $('.tile img').remove();
     matchGame.randomizeTiles();
     matchGame.addHideClass('.tile img');

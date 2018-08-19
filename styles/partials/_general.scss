@@ -22,6 +22,10 @@ a{
   color: $black;
   box-shadow: 5px 5px $black;
   transition: background-color 300ms ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .button:hover {

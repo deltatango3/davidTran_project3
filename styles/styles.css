@@ -257,7 +257,13 @@ a {
   box-shadow: 5px 5px #001011;
   -webkit-transition: background-color 300ms ease;
   -o-transition: background-color 300ms ease;
-  transition: background-color 300ms ease; }
+  transition: background-color 300ms ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
 
 .button:hover {
   background-color: #ffde46; }
@@ -349,6 +355,11 @@ main {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; } }
+  @media (min-width: 1800px) {
+    main {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }
 
 .game-board {
   position: relative;
@@ -369,6 +380,9 @@ main {
   margin: 0 auto;
   background-color: transparent;
   border-radius: 20px; }
+
+.tiles-wrapper-hide {
+  display: none; }
 
 .tile-disabled {
   z-index: -1;
@@ -394,14 +408,6 @@ main {
   animation: shake 200ms;
   background-color: rgba(0, 159, 253, 0.7); }
 
-.button-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
-
 .game-over {
   display: none;
   -webkit-box-pack: center;
@@ -410,6 +416,11 @@ main {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
+
+.game-over-visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 footer {
   background-color: #001011;
