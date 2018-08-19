@@ -141,7 +141,7 @@ matchGame.removeActiveClass = () => {
 matchGame.startGame = () => {
   $('#play-button').on('click', function() {
     matchGame.enableTiles();
-    matchGame.addHideClass('.button-wrapper');
+    matchGame.addHideClass('.button');
   });
 };
 
