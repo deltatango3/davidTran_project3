@@ -272,10 +272,10 @@ a {
   visibility: hidden; }
 
 .shimmer {
-  background: -webkit-gradient(linear, right top, left top, color-stop(20%, #001011), color-stop(40%, #001011), color-stop(60%, #888), to(#222));
-  background: -webkit-linear-gradient(right, #001011 20%, #001011 40%, #888 60%, #222 100%);
-  background: -o-linear-gradient(right, #001011 20%, #001011 40%, #888 60%, #222 100%);
-  background: linear-gradient(to left, #001011 20%, #001011 40%, #888 60%, #222 100%);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(20%, #001011), color-stop(40%, #001011), color-stop(60%, #888), to(#222));
+  background-image: -webkit-linear-gradient(left, #001011 20%, #001011 40%, #888 60%, #222 100%);
+  background-image: -o-linear-gradient(left, #001011 20%, #001011 40%, #888 60%, #222 100%);
+  background-image: linear-gradient(to right, #001011 20%, #001011 40%, #888 60%, #222 100%);
   background-size: 200% auto;
   -webkit-animation: shine 1500ms linear;
   animation: shine 1500ms linear;

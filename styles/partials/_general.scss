@@ -37,7 +37,7 @@ a{
 }
 
 .shimmer {
-  background: linear-gradient(to left, $black 20%, $black 40%, #888 60%, #222 100%);
+  background-image: linear-gradient(to right, $black 20%, $black 40%, #888 60%, #222 100%);
   background-size: 200% auto;
   animation: shine 1500ms linear;
   animation-iteration-count: 1;

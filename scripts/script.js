@@ -7,14 +7,14 @@ matchGame.animals = {
     facts: [
       `A giraffe's spots are like human fingerprints. No two individual giraffes have exactly the same pattern.`,
       `Giraffes only need 5 to 30 minutes of sleep a day. They often take quick naps that last a minute or two.`,
-      `The first giraffe to reach Europe was brough there by Julias Caesar in 46 B.C.`
+      `The first giraffe to reach Europe was brought there by Julias Caesar in 46 B.C.`
     ]
   },
   blueWhale: {
     name: 'Blue Whale',
     image: 'assets/whale.svg',
     facts: [
-      `Blue Whales are the biggest animal that has lived. Ever.`,
+      `Blue Whales are the biggest animals that have lived. Ever.`,
       `Blue Whales have been around for the last 54 million years.`,
       `Blue Whales sleep while they swim. They are able to use half their brain for sleeping while the other remains active.`
     ]
@@ -86,11 +86,12 @@ matchGame.ogInstructions = `Reveal two of the same animals under the tiles and r
 matchGame.randomizeTiles = () => {
 
   matchGame.finalTileOptions = matchGame.tileOptions1.concat(matchGame.tileOptions2).sort();
+  const randomAnimal = matchGame.finalTileOptions[randomIndex];
   const initialArrayLength = matchGame.finalTileOptions.length;
 
   for (let i = 1; i <= initialArrayLength; i++) {
     randomIndex = Math.floor(Math.random() * matchGame.finalTileOptions.length);
-    $('.tile' + i).append(`<img data-animal="${matchGame.finalTileOptions[randomIndex]}" class="hide" src="${matchGame.animals[matchGame.finalTileOptions[randomIndex]].image}">`);
+    $('.tile' + i).append(`<img data-animal="${randomAnimal}" class="hide" src="${matchGame.animals[randomAnimal].image}">`);
     matchGame.finalTileOptions.splice(randomIndex, 1);
   };
 
