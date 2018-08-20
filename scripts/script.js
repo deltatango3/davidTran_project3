@@ -86,12 +86,11 @@ matchGame.ogInstructions = `Reveal two of the same animals under the tiles and r
 matchGame.randomizeTiles = () => {
 
   matchGame.finalTileOptions = matchGame.tileOptions1.concat(matchGame.tileOptions2).sort();
-  const randomAnimal = matchGame.finalTileOptions[randomIndex];
   const initialArrayLength = matchGame.finalTileOptions.length;
 
   for (let i = 1; i <= initialArrayLength; i++) {
     randomIndex = Math.floor(Math.random() * matchGame.finalTileOptions.length);
-    $('.tile' + i).append(`<img data-animal="${randomAnimal}" class="hide" src="${matchGame.animals[randomAnimal].image}">`);
+    $('.tile' + i).append(`<img data-animal="${matchGame.finalTileOptions[randomIndex]}" class="hide" src="${matchGame.animals[matchGame.finalTileOptions[randomIndex]].image}">`);
     matchGame.finalTileOptions.splice(randomIndex, 1);
   };
 
