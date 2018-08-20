@@ -213,6 +213,9 @@ h1 {
   font-family: "Fredoka One", cursive;
   font-size: 6rem;
   letter-spacing: 2px; }
+  @media (max-width: 799px) {
+    h1 {
+      font-size: 4.5rem; } }
   @media (max-width: 575px) {
     h1 {
       font-size: 3rem; } }
@@ -368,6 +371,18 @@ main {
   flex: 0 0 90%;
   max-width: 600px;
   min-width: 260px; }
+  @media (max-width: 799px) {
+    .game-board {
+      -ms-flex-preferred-size: 75%;
+      flex-basis: 75%; } }
+  @media (max-width: 799px) and (max-height: 850px) {
+    .game-board {
+      -ms-flex-preferred-size: 60%;
+      flex-basis: 60%; } }
+  @media (max-width: 575px) {
+    .game-board {
+      -ms-flex-preferred-size: 90%;
+      flex-basis: 90%; } }
   .game-board img {
     background-color: #f7f5f4; }
 
